@@ -1,0 +1,29 @@
+<span class="tag-badge">
+    {{ include.tag }}
+</span>
+
+<style>
+/* Temporary styles for tag-badge.html to use the existing UI styles */
+.tag-badge {
+    background: rgba(123, 44, 191, 0.15);
+    color: var(--accent-purple);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.tag-badge:hover {
+    background: var(--accent-purple);
+    color: var(--bg-primary);
+}
+
+/* Variables from style.css */
+:root {
+    --bg-primary: #0f0f1e;
+    --accent-purple: #7b2cbf;
+}
+</style>
