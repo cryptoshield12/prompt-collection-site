@@ -34,71 +34,7 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-content">
-                <h2>Discover Powerful AI Prompts</h2>
-                <p>Explore our collection of expertly crafted prompts designed to unlock the full potential of your AI tools</p>
-                <button class="cta-button">Explore Now</button>
-            </div>
-        </section>
 
-        <!-- Prompts Grid -->
-        <section id="prompts" class="prompts-section">
-            <h2 class="section-title">Featured Prompts</h2>
-            <div class="prompts-grid">
-                {% assign featured_prompts = site.prompts | sort: "date" | reverse | limit: 6 %}
-                {% for prompt in featured_prompts %}
-                <div class="prompt-card">
-                    <div class="card-header">
-                        <h3><a href="{{ prompt.url }}">{{ prompt.title }}</a></h3>
-                        <span class="category-badge">{{ prompt.category }}</span>
-                    </div>
-                    <p class="card-description">{{ prompt.description }}</p>
-                    <div class="prompt-content">
-                        <code class="prompt-text">{{ prompt.prompt | truncate: 200 }}</code>
-                    </div>
-                    <div class="card-footer">
-                        <button class="copy-btn" data-prompt="{{ prompt.prompt }}">
-                            <span class="copy-icon">📋</span> Copy
-                        </button>
-                        <div class="tags">
-                            {% for tag in prompt.tags %}
-                                {% include tag-badge.html tag=tag %}
-                            {% endfor %}
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
-
-        <!-- Categories Section -->
-        <section id="categories" class="categories-section">
-            <h2 class="section-title">Browse by Category</h2>
-            <div class="categories-grid">
-                <div class="category-card">
-                    <div class="category-icon">📸</div>
-                    <h3>Photography</h3>
-                    <p>Professional camera settings and composition</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">🎨</div>
-                    <h3>Art & Design</h3>
-                    <p>Creative visual generation prompts</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">✍️</div>
-                    <h3>Writing</h3>
-                    <p>Content creation and storytelling</p>
-                </div>
-                <div class="category-card">
-                    <div class="category-icon">💡</div>
-                    <h3>Ideation</h3>
-                    <p>Brainstorming and concept development</p>
-                </div>
-            </div>
-        </section>
 
         <!-- Footer -->
         <footer class="footer">
