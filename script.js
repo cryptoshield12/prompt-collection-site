@@ -13,6 +13,20 @@ const navLinks = document.querySelectorAll('.nav-link');
 const promptCards = document.querySelectorAll('.prompt-card');
 
 // ============================================
+// Date Display Functionality
+// ============================================
+
+function displayCurrentDate() {
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+        const now = new Date();
+        // Format: NOV 05, 2025
+        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        dateElement.textContent = now.toLocaleDateString('en-US', options).toUpperCase().replace(/,/g, '');
+    }
+}
+
+// ============================================
 // Copy to Clipboard Functionality
 // ============================================
 
@@ -24,8 +38,8 @@ copyButtons.forEach(button => {
             // Copy to clipboard
             await navigator.clipboard.writeText(promptText);
             
-            // Show success toast
-            showToast('✓ Prompt copied to clipboard!', 'success');
+            // Show success toast (Updated message for Lined Paper Theme)
+            showToast('✓ PROMPT COPIED!', 'success');
             
             // Add animation
             this.style.transform = 'scale(0.95)';
@@ -34,7 +48,7 @@ copyButtons.forEach(button => {
             }, 200);
             
         } catch (err) {
-            showToast('✗ Failed to copy prompt', 'error');
+            showToast('✗ COPY FAILED', 'error');
             console.error('Failed to copy:', err);
         }
     });
@@ -236,6 +250,9 @@ document.addEventListener('keydown', function(e) {
 // ============================================
 
 window.addEventListener('load', function() {
+    // Display current date on load
+    displayCurrentDate();
+    
     // Fade in header
     const header = document.querySelector('.header');
     if (header) {
@@ -302,6 +319,6 @@ if (window.performance && window.performance.timing) {
 // Console Message
 // ============================================
 
-console.log('%c🎨 Prompt Collection Site', 'font-size: 20px; color: #00d4ff; font-weight: bold;');
-console.log('%cNeo-Minimalism Design System', 'font-size: 14px; color: #7b2cbf;');
-console.log('%cDark Mode with Neon Gradient (Blue-Purple)', 'font-size: 12px; color: #a0a0a0;');
+console.log('%c📓 Prompt Collection Site', 'font-size: 20px; color: #007bff; font-weight: bold;');
+console.log('%cLined Paper Theme', 'font-size: 14px; color: #dc3545;');
+console.log('%cBack to School Style', 'font-size: 12px; color: #555555;');
